@@ -334,11 +334,11 @@ date_default_timezone_set("Asia/Bangkok");
                                         <h3 class="animate-charcter"> แจ้งปัญหาไอที</h3>
                                         <h3> Your IP Address: <?= $ip = $_SERVER['REMOTE_ADDR']; ?>
                                     </div>
-
+                                    <?= @$alert ?>
 
 
                                     <div class="col-lg-4 col-md-8 col-sm-12">
-                                        <select class="form-select" aria-label="Default select example" name="dept" id="dept" onclick="getdept()">
+                                        <select class="form-select" aria-label="Default select example" name="dept" id="dept" onchange="getdept()">
 
                                             <option value="ไม่ได้เลือก">--Select Department--</option>
                                             <?php
@@ -400,7 +400,10 @@ date_default_timezone_set("Asia/Bangkok");
 
                             </form>
                             <?php
-
+                            $date = date("Y-m-d H:i:s");
+                            $dept = $_POST['dept'];
+                            $name = $_POST['user_name'];
+                            $txtar = $_POST['txtar'];
 
 
                             $sql_get = "SELECT * FROM department where dept_id = '{$_POST['dept']}'";
@@ -410,28 +413,21 @@ date_default_timezone_set("Asia/Bangkok");
                             if (isset($_POST['next'])) {
 
 
-
-                                $date = date("Y-m-d H:i:s");
-                                $dept = $_POST['dept'];
-                                $name = $_POST['user_name'];
-                                $txtar = $_POST['txtar'];
                                 $sql_line = "INSERT INTO it_problem (itp_date,itp_dept,	itp_name,itp_detail,itp_ip,itp_anydesk) VALUES ('$date','$dept_dept','$name','$txtar','$ip','$anydesk')";
                                 $qr_line = mysqli_query($conn, $sql_line);
                                 if ($qr_line) {
 
                                     echo "<script>swal({
-                                        title: 'แจ้งสำเร็จ กรุณารอสักครู่...', //ข้อความ เปลี่ยนได้ เช่น บันทึกข้อมูลสำเร็จ!!
-                                    //  text: 'กรุณารอสักครู่ ไอทีได้รับข้อความที่คุณส่งแล้ว', //ข้อความเปลี่ยนได้ตามการใช้งาน
-                                        type: 'success', //success, warning, danger
-                                        timer: 2000, //ระยะเวลา redirect 3000 = 3 วิ เพิ่มลดได้
-                                        showConfirmButton: false //ปิดการแสดงปุ่มคอนเฟิร์ม ถ้าแก้เป็น true จะแสดงปุ่ม ok ให้คลิกเหมือนเดิม
-                                    }, function(){
-                                        window.location.href ='get_connect_it.php?line=yes'; //หน้าเพจที่เราต้องการให้ redirect ไป อาจใส่เป็นชื่อไฟล์ภายในโปรเจคเราก็ได้ครับ เช่น admin.php
-                                        })</script>";
+            title: 'แจ้งสำเร็จ กรุณารอสักครู่...', //ข้อความ เปลี่ยนได้ เช่น บันทึกข้อมูลสำเร็จ!!
+        //  text: 'กรุณารอสักครู่ ไอทีได้รับข้อความที่คุณส่งแล้ว', //ข้อความเปลี่ยนได้ตามการใช้งาน
+            type: 'success', //success, warning, danger
+            timer: 2000, //ระยะเวลา redirect 3000 = 3 วิ เพิ่มลดได้
+            showConfirmButton: false //ปิดการแสดงปุ่มคอนเฟิร์ม ถ้าแก้เป็น true จะแสดงปุ่ม ok ให้คลิกเหมือนเดิม
+        }, function(){
+            window.location.href ='get_connect_it.php?line=yes'; //หน้าเพจที่เราต้องการให้ redirect ไป อาจใส่เป็นชื่อไฟล์ภายในโปรเจคเราก็ได้ครับ เช่น admin.php
+            })</script>";
                                 }
                             }
-
-
 
                             ?>
                         </div>
