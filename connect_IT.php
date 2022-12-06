@@ -24,17 +24,18 @@ date_default_timezone_set("Asia/Bangkok");
     <!-- Ionicons -->
     <link rel="stylesheet" href="https://code.ionicframework.com/ionicons/2.0.1/css/ionicons.min.css">
     <!-- Tempusdominus Bootstrap 4 -->
-    <link rel="stylesheet" href="plugins/tempusdominus-bootstrap-4/css/tempusdominus-bootstrap-4.min.css">
+    <!-- <link rel="stylesheet" href="plugins/tempusdominus-bootstrap-4/css/tempusdominus-bootstrap-4.min.css"> -->
     <!-- iCheck -->
     <link rel="stylesheet" href="plugins/icheck-bootstrap/icheck-bootstrap.min.css">
     <!-- JQVMap -->
-    <link rel="stylesheet" href="plugins/jqvmap/jqvmap.min.css">
+    <!-- <link rel="stylesheet" href="plugins/jqvmap/jqvmap.min.css"> -->
     <!-- Theme style -->
     <link rel="stylesheet" href="dist/css/adminlte.min.css">
 
 
 
-
+    <link rel="stylesheet" href="https://cdn.datatables.net/1.12.1/css/jquery.dataTables.min.css">
+    <link rel="stylesheet" href="https://cdn.datatables.net/buttons/2.2.3/css/buttons.dataTables.min.css">
 
     <!-- sweet alert js & css -->
     <script src="https://code.jquery.com/jquery-2.1.3.min.js"></script>
@@ -43,7 +44,7 @@ date_default_timezone_set("Asia/Bangkok");
 
     <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.15.4/css/solid.css" integrity="sha384-Tv5i09RULyHKMwX0E8wJUqSOaXlyu3SQxORObAI08iUwIalMmN5L6AvlPX2LMoSE" crossorigin="anonymous" />
     <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.15.4/css/fontawesome.css" integrity="sha384-jLKHWM3JRmfMU0A5x5AkjWkw/EYfGUAGagvnfryNV3F9VqM98XiIH7VBGVoxVSc7" crossorigin="anonymous" />
-
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-rbsA2VBKQhggwzxH7pPCaAqO46MgnOM80zW1RWuH61DGLwZJEdK2Kadq2F9CUG65" crossorigin="anonymous">
 </head>
 
 <style>
@@ -58,14 +59,22 @@ date_default_timezone_set("Asia/Bangkok");
         background: linear-gradient(90deg, rgba(2, 0, 36, 1) 0%, rgba(30, 30, 171, 1) 0%, rgba(0, 212, 255, 1) 100%);
     }
 
-    .btn {
+    .btns {
         background: rgb(81, 10, 246);
         background: linear-gradient(90deg, rgba(81, 10, 246, 1) 0%, rgba(255, 244, 0, 1) 0%, rgba(213, 42, 238, 0.938813025210084) 100%);
     }
 
     html,
     body {
-        background: #1b2836;
+        background-image: url("img/it.jpeg");
+
+        background-repeat: no-repeat;
+        background-position: center center;
+        background-attachment: fixed;
+        -o-background-size: 100% 100%, auto;
+        -moz-background-size: 100% 100%, auto;
+        -webkit-background-size: 100% 100%, auto;
+        background-size: 100% 100%, auto;
     }
 
     * {
@@ -277,6 +286,8 @@ date_default_timezone_set("Asia/Bangkok");
     }
 
     .animate-charcter {
+
+        border-color: #fff;
         text-transform: uppercase;
         background-image: linear-gradient(-225deg,
                 #231557 0%,
@@ -302,18 +313,19 @@ date_default_timezone_set("Asia/Bangkok");
         }
     }
 
-    .card {
+    /* .card {
         background-color: #fff;
-    }
+    } */
 </style>
 
 <body class="hold-transition sidebar-mini layout-fixed">
+
     <div class="wrapper">
         <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM" crossorigin="anonymous"></script>
         <div class="container">
             <div class="row pt-10 mt-5">
                 <div class="col-12">
-                    <div class="card">
+                    <div class="">
                         <div class="card-body">
                             <form method="POST">
                                 <?PHP
@@ -331,8 +343,8 @@ date_default_timezone_set("Asia/Bangkok");
                                 ?>
                                 <center>
                                     <div class="col-md-12 text-center">
-                                        <h3 class="animate-charcter"> แจ้งปัญหาไอที</h3>
-                                        <h3> Your IP Address: <?= $ip = $_SERVER['REMOTE_ADDR']; ?>
+                                        <h3 class="animate-charcter"><span class=""> แจ้งปัญหาไอที</span></h3>
+                                        <h3 style="color: white;"> <span class="badge badge-success">Your IP Address: <?= $ip = $_SERVER['REMOTE_ADDR']; ?></span></h3>
                                     </div>
                                     <?= @$alert ?>
 
@@ -393,11 +405,120 @@ date_default_timezone_set("Asia/Bangkok");
                                         <Textarea name="txtar" class="txtarea" placeholder="--รายละเอียด--"></Textarea>
                                     </div>
                                     <br>
-                                    <button name="next" type="submit" class="btn btn-warning">ดำเนินการแจ้ง</button>
+                                    <button name="next" type="submit" class="btn btn-warning btns">ดำเนินการแจ้ง</button>
+                                    <br>
                                     <br>
                                 </center>
 
+                                <table class="table table-striped table-bordered" id="example" style=" width: 100%;">
+                                    <thead>
+                                        <tr>
 
+                                            <th style="text-align: center; color:white;">วันที่แจ้งปัญหา</th>
+                                            <th style="text-align: center; color:white;">แผนก</th>
+                                            <th style="text-align: center; color:white;">ชื่อผู้แจ้ง</th>
+                                            <th style="text-align: center; color:white;">รายละเอียดปัญหา</th>
+                                            <th style="text-align: center; color:white;">IP Address</th>
+                                            <th style="text-align: center; color:white;">จัดการ</th>
+
+                                        </tr>
+                                    </thead>
+                                    <tbody>
+
+                                        <?php
+                                        // $servername = 'localhost';
+                                        // $username = 'root';
+                                        // $password = '';
+                                        // $db_name = 'louis_db';
+
+                                        // $conn = mysqli_connect($servername, $username, $password, $db_name);
+                                        $i = 1;
+                                        $sql_rp = "SELECT * FROM it_problem order by itp_id desc LIMIT 5;";
+                                        $qr_rp = mysqli_query($conn, $sql_rp);
+
+                                        while ($rs_rp = mysqli_fetch_assoc($qr_rp)) {
+                                        ?>
+                                            <tr>
+
+                                                <td style="color:white;"><?= $rs_rp['itp_date'] ?></td>
+                                                <td style="color:white;"><?= $rs_rp["itp_dept"] ?></td>
+                                                <td style="color:white;"><?= $rs_rp["itp_name"] ?></td>
+                                                <td style="color:white;"><?= $rs_rp["itp_detail"] ?></td>
+                                                <td style="color:white;"><span class="badge badge-warning"><?= $rs_rp['itp_ip'] ?></span></td>
+                                                <td style="text-align:center ;">
+                                                    <?php
+                                                    if ($rs_rp['itp_status'] == 1)
+                                                        echo "<button type='button' class='btn btn-primary submit' data-bs-toggle='modal' data-id='{$rs_rp['itp_id']}'  data-bs-target='#exampleModal'>
+                                                แก้ไขปัญหา
+                                            </button>";
+                                                    if ($rs_rp['itp_status'] == 2) {
+                                                        echo "<button type='button' class='btn btn-success'>
+                                                สำเร็จ
+                                            </button>";
+                                                    }
+                                                    ?>
+                                                   
+                                                </td>
+                                            </tr>
+                                        <?php
+                                            $i++;
+                                        }
+
+                                        ?>
+                                    </tbody>
+                                </table>
+                                <!-- Modal -->
+                                <div class="modal fade" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+                                    <div class="modal-dialog">
+                                        <div class="modal-content">
+                                            <div class="modal-header">
+                                                <h1 class="modal-title fs-5" id="exampleModalLabel">IT Support </h1>
+                                                <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                                            </div>
+                                            <div class="modal-body">
+                                                <div style="display: none;"><input type="text" name="ddd" id="ddd" class="form-control"></div>
+                                            
+                                                <label for="" class="label-control">วิธีแก้ไขปัญหา</label>
+                                                <input type="text" name="problem" id="" class="form-control">
+                                                <label for="" class="label-control">ผู้ดำเนินการ</label>
+                                                <input type="text" name="user" class="form-control">
+                                            </div>
+                                            <div class="modal-footer">
+                                                <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+                                                <button type="submit" name="btn_save" class="btn btn-primary">Save changes</button>
+                                            </div>
+                                            <?php
+                                            if(isset($_POST['btn_save'])){
+                                                $sql_update = "UPDATE it_problem SET itp_status = '2', itp_problem = '{$_POST['problem']}', itp_user = '{$_POST['user']}' Where itp_id = '{$_POST['ddd']}'";
+                                                $qr_update = mysqli_query($conn, $sql_update);
+
+                                                if($qr_update){
+                                                    echo "<script>swal({
+                                                        title: 'ดำเนินการสำเร็จ', //ข้อความ เปลี่ยนได้ เช่น บันทึกข้อมูลสำเร็จ!!
+                                                    //  text: 'กรุณารอสักครู่ ไอทีได้รับข้อความที่คุณส่งแล้ว', //ข้อความเปลี่ยนได้ตามการใช้งาน
+                                                        type: 'success', //success, warning, danger
+                                                        timer: 2000, //ระยะเวลา redirect 3000 = 3 วิ เพิ่มลดได้
+                                                        showConfirmButton: false //ปิดการแสดงปุ่มคอนเฟิร์ม ถ้าแก้เป็น true จะแสดงปุ่ม ok ให้คลิกเหมือนเดิม
+                                                    }, function(){
+                                                        window.location.href ='get_connect_it.php?update=update'; //หน้าเพจที่เราต้องการให้ redirect ไป อาจใส่เป็นชื่อไฟล์ภายในโปรเจคเราก็ได้ครับ เช่น admin.php
+                                                        })</script>";
+                                                }
+
+                                            }
+                                            ?>
+                                        </div>
+                                    </div>
+                                </div>
+
+                                <script>
+                                    $(document).ready(function() {
+                                        $('.submit').click(function() {
+                                            // $('#ddd').text($(this).data('id'));
+                                            let id = document.getElementById("ddd").value = $(this).data('id');
+                                            console.log('kk');
+                                        });
+                                    })
+                                </script>
                             </form>
                             <?php
                             $date = date("Y-m-d H:i:s");
@@ -409,11 +530,13 @@ date_default_timezone_set("Asia/Bangkok");
                             $sql_get = "SELECT * FROM department where dept_id = '{$_POST['dept']}'";
                             $qr_get = mysqli_query($conn, $sql_get);
                             $rs_get = mysqli_fetch_array($qr_get);
+
+                            $dept_id = $rs_get['dept_id'];
                             $dept_dept = $rs_get['dept_name'];
                             if (isset($_POST['next'])) {
 
 
-                                $sql_line = "INSERT INTO it_problem (itp_date,itp_dept,	itp_name,itp_detail,itp_ip,itp_anydesk) VALUES ('$date','$dept_dept','$name','$txtar','$ip','$anydesk')";
+                                $sql_line = "INSERT INTO it_problem (itp_date,itp_dept,itp_dept_id,itp_name,itp_detail,itp_ip,itp_anydesk,itp_status,itp_problem,itp_user) VALUES ('$date','$dept_dept','$dept_id','$name','$txtar','$ip','$anydesk','1','','')";
                                 $qr_line = mysqli_query($conn, $sql_line);
                                 if ($qr_line) {
 
@@ -505,6 +628,27 @@ date_default_timezone_set("Asia/Bangkok");
     </div>
 
 
+    <!-- Bootstrap 4 -->
+    <script src="plugins/bootstrap/js/bootstrap.bundle.min.js"></script>
+    <!-- <script>
+        $(document).ready(function() {
+            $('#example').DataTable({
+                dom: 'Bfrtip',
+                buttons: [
+                    // 'copy', 'csv', 'excel', 'pdf', 'print'
+                    'excel', 'print'
+                ]
+            });
+        });
+    </script> -->
+    <script src="https://code.jquery.com/jquery-3.5.1.js"></script>
+    <script src="https://cdn.datatables.net/1.12.1/js/jquery.dataTables.min.js"></script>
+    <script src="https://cdn.datatables.net/buttons/2.2.3/js/dataTables.buttons.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jszip/3.1.3/jszip.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/pdfmake/0.1.53/pdfmake.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/pdfmake/0.1.53/vfs_fonts.js"></script>
+    <script src="https://cdn.datatables.net/buttons/2.2.3/js/buttons.html5.min.js"></script>
+    <script src="https://cdn.datatables.net/buttons/2.2.3/js/buttons.print.min.js"></script>
 </body>
 
 </html>
