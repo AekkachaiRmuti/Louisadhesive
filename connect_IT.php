@@ -346,13 +346,13 @@ date_default_timezone_set("Asia/Bangkok");
                                         <h3 class="animate-charcter"><span class=""> แจ้งปัญหาไอที</span></h3>
                                         <h3 style="color: white;"> <span class="badge badge-success">Your IP Address: <?= $ip = $_SERVER['REMOTE_ADDR']; ?></span></h3>
                                     </div>
-                                    <?= @$alert ?>
+                                   
 
 
                                     <div class="col-lg-4 col-md-8 col-sm-12">
                                         <select class="form-select" aria-label="Default select example" name="dept" id="dept" onchange="getdept()">
 
-                                            <option value="ไม่ได้เลือก">--Select Department--</option>
+                                            <option value="">--Select Department--</option>
                                             <?php
 
                                             include 'connect_db.php';
@@ -368,11 +368,13 @@ date_default_timezone_set("Asia/Bangkok");
                                             ?>
 
                                         </select>
-
+                                      
                                     </div>
-                                    <div id="ajax_connect" onclick="user_id()">
+                                    <div id="ajax_connect" onchange="user_id()">
                                         <!-- <input type="text" name="user" id="" class="form-control" placeholder="--ชื่อผู้แจ้ง--" autocomplete="off"> -->
+                                      
                                     </div>
+
 
                                     <script>
                                         // $(document).ready(function() {
@@ -410,6 +412,8 @@ date_default_timezone_set("Asia/Bangkok");
                                     <br>
                                 </center>
 
+
+
                                 <table class="table table-striped table-bordered" id="example" style=" width: 100%;">
                                     <thead>
                                         <tr>
@@ -444,7 +448,7 @@ date_default_timezone_set("Asia/Bangkok");
                                                 <td style="color:white;"><?= $rs_rp["itp_dept"] ?></td>
                                                 <td style="color:white;"><?= $rs_rp["itp_name"] ?></td>
                                                 <td style="color:white;"><?= $rs_rp["itp_detail"] ?></td>
-                                                <td style="color:white;"><span class="badge badge-warning"><?= $rs_rp['itp_ip'] ?></span></td>
+                                                <td style="color:white;"><p style="font-size: 17px;"><span class="badge badge-warning"><?= $rs_rp['itp_ip'] ?></span></p></td>
                                                 <td style="text-align:center ;">
                                                     <?php
                                                     if ($rs_rp['itp_status'] == 1)
@@ -457,7 +461,7 @@ date_default_timezone_set("Asia/Bangkok");
                                             </button>";
                                                     }
                                                     ?>
-                                                   
+
                                                 </td>
                                             </tr>
                                         <?php
@@ -477,7 +481,7 @@ date_default_timezone_set("Asia/Bangkok");
                                             </div>
                                             <div class="modal-body">
                                                 <div style="display: none;"><input type="text" name="ddd" id="ddd" class="form-control"></div>
-                                            
+
                                                 <label for="" class="label-control">วิธีแก้ไขปัญหา</label>
                                                 <input type="text" name="problem" id="" class="form-control">
                                                 <label for="" class="label-control">ผู้ดำเนินการ</label>
@@ -488,11 +492,11 @@ date_default_timezone_set("Asia/Bangkok");
                                                 <button type="submit" name="btn_save" class="btn btn-primary">Save changes</button>
                                             </div>
                                             <?php
-                                            if(isset($_POST['btn_save'])){
+                                            if (isset($_POST['btn_save'])) {
                                                 $sql_update = "UPDATE it_problem SET itp_status = '2', itp_problem = '{$_POST['problem']}', itp_user = '{$_POST['user']}' Where itp_id = '{$_POST['ddd']}'";
                                                 $qr_update = mysqli_query($conn, $sql_update);
 
-                                                if($qr_update){
+                                                if ($qr_update) {
                                                     echo "<script>swal({
                                                         title: 'ดำเนินการสำเร็จ', //ข้อความ เปลี่ยนได้ เช่น บันทึกข้อมูลสำเร็จ!!
                                                     //  text: 'กรุณารอสักครู่ ไอทีได้รับข้อความที่คุณส่งแล้ว', //ข้อความเปลี่ยนได้ตามการใช้งาน
@@ -503,7 +507,6 @@ date_default_timezone_set("Asia/Bangkok");
                                                         window.location.href ='get_connect_it.php?update=update'; //หน้าเพจที่เราต้องการให้ redirect ไป อาจใส่เป็นชื่อไฟล์ภายในโปรเจคเราก็ได้ครับ เช่น admin.php
                                                         })</script>";
                                                 }
-
                                             }
                                             ?>
                                         </div>
@@ -534,13 +537,23 @@ date_default_timezone_set("Asia/Bangkok");
                             $dept_id = $rs_get['dept_id'];
                             $dept_dept = $rs_get['dept_name'];
                             if (isset($_POST['next'])) {
-
-
-                                $sql_line = "INSERT INTO it_problem (itp_date,itp_dept,itp_dept_id,itp_name,itp_detail,itp_ip,itp_anydesk,itp_status,itp_problem,itp_user) VALUES ('$date','$dept_dept','$dept_id','$name','$txtar','$ip','$anydesk','1','','')";
-                                $qr_line = mysqli_query($conn, $sql_line);
-                                if ($qr_line) {
-
+                                if ($name == 0 || $dept ='') {
                                     echo "<script>swal({
+                                        title: 'Please select Department and Username...', //ข้อความ เปลี่ยนได้ เช่น บันทึกข้อมูลสำเร็จ!!
+                                    //  text: 'กรุณารอสักครู่ ไอทีได้รับข้อความที่คุณส่งแล้ว', //ข้อความเปลี่ยนได้ตามการใช้งาน
+                                        type: 'warning', //success, warning, danger
+                                        timer: 5000, //ระยะเวลา redirect 3000 = 3 วิ เพิ่มลดได้
+                                        showConfirmButton: false //ปิดการแสดงปุ่มคอนเฟิร์ม ถ้าแก้เป็น true จะแสดงปุ่ม ok ให้คลิกเหมือนเดิม
+                                    }, function(){
+                                        window.location.href ='connect_it.php'; //หน้าเพจที่เราต้องการให้ redirect ไป อาจใส่เป็นชื่อไฟล์ภายในโปรเจคเราก็ได้ครับ เช่น admin.php
+                                        })</script>";
+                                } else {
+
+                                    $sql_line = "INSERT INTO it_problem (itp_date,itp_dept,itp_dept_id,itp_name,itp_detail,itp_ip,itp_anydesk,itp_status,itp_problem,itp_user) VALUES ('$date','$dept_dept','$dept_id','$name','$txtar','$ip','$anydesk','1','','')";
+                                    $qr_line = mysqli_query($conn, $sql_line);
+                                    if ($qr_line) {
+
+                                        echo "<script>swal({
             title: 'แจ้งสำเร็จ กรุณารอสักครู่...', //ข้อความ เปลี่ยนได้ เช่น บันทึกข้อมูลสำเร็จ!!
         //  text: 'กรุณารอสักครู่ ไอทีได้รับข้อความที่คุณส่งแล้ว', //ข้อความเปลี่ยนได้ตามการใช้งาน
             type: 'success', //success, warning, danger
@@ -549,6 +562,7 @@ date_default_timezone_set("Asia/Bangkok");
         }, function(){
             window.location.href ='get_connect_it.php?line=yes'; //หน้าเพจที่เราต้องการให้ redirect ไป อาจใส่เป็นชื่อไฟล์ภายในโปรเจคเราก็ได้ครับ เช่น admin.php
             })</script>";
+                                    }
                                 }
                             }
 

@@ -5,7 +5,7 @@ $key_dept = $_GET['key'];
 <div class="col-lg-4 col-md-8 col-sm-12 mt-2">
     <select class="form-select" aria-label="Default select example" name="user_name" id="user_id">
 
-        <option value="ไม่ได้เลือก">--Select Username--</option>
+        <option value="0">--Select Username--</option>
         <?php
 
         include 'connect_db.php';

@@ -23,8 +23,8 @@ if ($_GET['update'] == 'update') {
 
 define('LINE_API', "https://notify-api.line.me/api/notify");
 
-     $token = "YRGfR1f8BsUXDlIPNZZ0IC9eogZkwS4nrHpEJVLDxPV"; //IT
-    // $token = "7q3XZ82ayOuKGSXcM7vky6rqrJz4tMWKDh6MUa1BmSr"; //ใส่Token ที่copy เอาไว้ PHOTOME
+    //  $token = "YRGfR1f8BsUXDlIPNZZ0IC9eogZkwS4nrHpEJVLDxPV"; //IT
+    $token = "7q3XZ82ayOuKGSXcM7vky6rqrJz4tMWKDh6MUa1BmSr"; //ใส่Token ที่copy เอาไว้ PHOTOME
     
 
     $res = notify_message($str, $token);
