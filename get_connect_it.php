@@ -11,10 +11,10 @@ include 'connect_db.php';
     $str = "\n"."เวลา : ".$rs["itp_date"]."\n"."ปัญหาที่แจ้ง : ".$rs["itp_detail"]."\n"."แผนก : ".$rs["itp_dept"]."\n"."ผู้แจ้ง : ".$rs["itp_name"]."\n"."IP : ".$rs["itp_ip"];
 }
 
-if ($_GET['update'] == 'update') {
+if ($_GET['update'] != '') {
  
     
-    $sql = "SELECT itp_id, itp_date,itp_dept,itp_name,itp_detail,itp_ip, itp_anydesk, itp_status, itp_problem, itp_user FROM it_problem ORDER BY itp_id DESC LIMIT 1";
+    $sql = "SELECT itp_id, itp_date,itp_dept,itp_name,itp_detail,itp_ip, itp_anydesk, itp_status, itp_problem, itp_user FROM it_problem Where itp_id = '{$_GET['update']}' ORDER BY itp_id DESC LIMIT 1";
     $qr_ = mysqli_query($conn, $sql);
     $rs = mysqli_fetch_array($qr_); 
     

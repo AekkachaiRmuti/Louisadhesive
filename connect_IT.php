@@ -507,7 +507,7 @@ date_default_timezone_set("Asia/Bangkok");
                                                         timer: 2000, //ระยะเวลา redirect 3000 = 3 วิ เพิ่มลดได้
                                                         showConfirmButton: false //ปิดการแสดงปุ่มคอนเฟิร์ม ถ้าแก้เป็น true จะแสดงปุ่ม ok ให้คลิกเหมือนเดิม
                                                     }, function(){
-                                                        window.location.href ='get_connect_it.php?update=update'; //หน้าเพจที่เราต้องการให้ redirect ไป อาจใส่เป็นชื่อไฟล์ภายในโปรเจคเราก็ได้ครับ เช่น admin.php
+                                                        window.location.href ='get_connect_it.php?update={$_POST['ddd']}'; //หน้าเพจที่เราต้องการให้ redirect ไป อาจใส่เป็นชื่อไฟล์ภายในโปรเจคเราก็ได้ครับ เช่น admin.php
                                                         })</script>";
                                                 }
                                             }
