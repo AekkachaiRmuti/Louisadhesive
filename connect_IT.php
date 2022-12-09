@@ -540,7 +540,7 @@ date_default_timezone_set("Asia/Bangkok");
                             $dept_id = $rs_get['dept_id'];
                             $dept_dept = $rs_get['dept_name'];
                             if (isset($_POST['next'])) {
-                                if ($name == 0 || $dept ='') {
+                                if ($name == '' || $dept ='') {
                                     echo "<script>swal({
                                         title: 'Please select Department and Username...', //ข้อความ เปลี่ยนได้ เช่น บันทึกข้อมูลสำเร็จ!!
                                     //  text: 'กรุณารอสักครู่ ไอทีได้รับข้อความที่คุณส่งแล้ว', //ข้อความเปลี่ยนได้ตามการใช้งาน
