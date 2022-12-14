@@ -11,7 +11,7 @@ date_default_timezone_set("Asia/Bangkok");
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    
+
     <title>IT Connect</title>
 
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
@@ -328,7 +328,7 @@ date_default_timezone_set("Asia/Bangkok");
                 <div class="col-12">
                     <div class="">
                         <div class="card-body">
-                            <form method="POST">
+                            <form method="POST" enctype="multipart/form-data">
                                 <?PHP
                                 if ($_GET['accept'] == 'yes') {
                                     echo "<script>
@@ -349,8 +349,14 @@ date_default_timezone_set("Asia/Bangkok");
                                         <a class="center" href="files/connect_it.rar" download>Install</a>
                                         <h3 style="color: white;"> <span class="badge badge-success">Your IP Address: <?= $ip = $_SERVER['REMOTE_ADDR']; ?></span></h3>
                                     </div>
-                                   
 
+
+                                    <div class="col-lg-4 col-md-8 col-sm-12 mb-2">
+                                        <label for="" style="color:white" class="badge badge-warning">
+                                            <h6>แนบรูปภาพ</h6>
+                                        </label>
+                                        <input type="file" name="" id="fileupload" name="fileupload" class="form-control" accept="image/gif, image/jpeg, image/png" />
+                                    </div>
 
                                     <div class="col-lg-4 col-md-8 col-sm-12">
                                         <select class="form-select" aria-label="Default select example" name="dept" id="dept" onchange="getdept()">
@@ -371,11 +377,11 @@ date_default_timezone_set("Asia/Bangkok");
                                             ?>
 
                                         </select>
-                                      
+
                                     </div>
                                     <div id="ajax_connect" onchange="user_id()">
                                         <!-- <input type="text" name="user" id="" class="form-control" placeholder="--ชื่อผู้แจ้ง--" autocomplete="off"> -->
-                                      
+
                                     </div>
 
 
@@ -413,6 +419,7 @@ date_default_timezone_set("Asia/Bangkok");
                                     <button name="next" type="submit" class="btn btn-warning btns">ดำเนินการแจ้ง</button>
                                     <br>
                                     <br>
+                                    <?= $path_link ?>
                                 </center>
 
 
@@ -451,7 +458,9 @@ date_default_timezone_set("Asia/Bangkok");
                                                 <td style="color:white;"><?= $rs_rp["itp_dept"] ?></td>
                                                 <td style="color:white;"><?= $rs_rp["itp_name"] ?></td>
                                                 <td style="color:white;"><?= $rs_rp["itp_detail"] ?></td>
-                                                <td style="color:white;"><p style="font-size: 17px;"><span class="badge badge-warning"><?= $rs_rp['itp_ip'] ?></span></p></td>
+                                                <td style="color:white;">
+                                                    <p style="font-size: 17px;"><span class="badge badge-warning"><?= $rs_rp['itp_ip'] ?></span></p>
+                                                </td>
                                                 <td style="text-align:center ;">
                                                     <?php
                                                     if ($rs_rp['itp_status'] == 1)
@@ -540,7 +549,9 @@ date_default_timezone_set("Asia/Bangkok");
                             $dept_id = $rs_get['dept_id'];
                             $dept_dept = $rs_get['dept_name'];
                             if (isset($_POST['next'])) {
-                                if ($name == '' || $dept ='') {
+
+
+                                if ($name == '' || $dept = '') {
                                     echo "<script>swal({
                                         title: 'Please select Department and Username...', //ข้อความ เปลี่ยนได้ เช่น บันทึกข้อมูลสำเร็จ!!
                                     //  text: 'กรุณารอสักครู่ ไอทีได้รับข้อความที่คุณส่งแล้ว', //ข้อความเปลี่ยนได้ตามการใช้งาน
@@ -551,23 +562,87 @@ date_default_timezone_set("Asia/Bangkok");
                                         window.location.href ='connect_it.php'; //หน้าเพจที่เราต้องการให้ redirect ไป อาจใส่เป็นชื่อไฟล์ภายในโปรเจคเราก็ได้ครับ เช่น admin.php
                                         })</script>";
                                 } else {
+                                    $upload = basename($_FILES['fileupload']['name']);
 
-                                    $sql_line = "INSERT INTO it_problem (itp_date,itp_dept,itp_dept_id,itp_name,itp_detail,itp_ip,itp_anydesk,itp_status,itp_problem,itp_user) VALUES ('$date','$dept_dept','$dept_id','$name','$txtar','$ip','$anydesk','1','','')";
-                                    $qr_line = mysqli_query($conn, $sql_line);
-                                    if ($qr_line) {
+                                    if ($upload <> '') {   //not select file
+                                        //โฟลเดอร์ที่จะ upload file เข้าไป 
+                                        $path = "image_problem/";
 
-                                        echo "<script>swal({
-            title: 'แจ้งสำเร็จ กรุณารอสักครู่...', //ข้อความ เปลี่ยนได้ เช่น บันทึกข้อมูลสำเร็จ!!
-        //  text: 'กรุณารอสักครู่ ไอทีได้รับข้อความที่คุณส่งแล้ว', //ข้อความเปลี่ยนได้ตามการใช้งาน
-            type: 'success', //success, warning, danger
-            timer: 2000, //ระยะเวลา redirect 3000 = 3 วิ เพิ่มลดได้
-            showConfirmButton: false //ปิดการแสดงปุ่มคอนเฟิร์ม ถ้าแก้เป็น true จะแสดงปุ่ม ok ให้คลิกเหมือนเดิม
-        }, function(){
-            window.location.href ='get_connect_it.php?line=yes'; //หน้าเพจที่เราต้องการให้ redirect ไป อาจใส่เป็นชื่อไฟล์ภายในโปรเจคเราก็ได้ครับ เช่น admin.php
-            })</script>";
+                                        //เอาชื่อไฟล์ที่มีอักขระแปลกๆออก
+                                        $remove_these = array(
+                                            ' ', '`', '"', '\'', '\\', '/', '_', '1', '2', '3', '4', '5', '6', '7', '8', '9', '0', 'a',
+                                            'b',
+                                            'c',
+                                            'd',
+                                            'h',
+                                            'k',
+                                            'l',
+                                            'm',
+                                            'o',
+                                            'q',
+                                            'r',
+                                            's',
+                                            't',
+                                            'u',
+                                            'v',
+                                            'x',
+                                            'y',
+                                            'z', 'A',
+                                            'B',
+                                            'C',
+                                            'D',
+                                            'H',
+                                            'K',
+                                            'L',
+                                            'M',
+                                            'O',
+                                            'Q',
+                                            'R',
+                                            'S',
+                                            'T',
+                                            'U',
+                                            'V',
+                                            'X',
+                                            'Y',
+                                            'Z',
+                                        );
+                                        $newname = str_replace($remove_these, '', $_FILES['fileupload']['name']);
+
+                                        //ตั้งชื่อไฟล์ใหม่โดยเอาเวลาไว้หน้าชื่อไฟล์เดิม
+                                        $jod_id = 'pic' . date("Ymd") . rand(0, 999);
+                                        $newname = $jod_id . basename($newname);
+                                        $path_copy = $path . $newname;
+                                        $path_link = $path . $newname;
+                                        echo basename($newname);
+                                        //คัดลอกไฟล์ไปเก็บที่เว็บเซริ์ฟเวอร์
+
+                                        move_uploaded_file($_FILES['fileupload']['tmp_name'], $path_copy);
                                     }
+
+                                    // $sql_line = "INSERT INTO it_problem (itp_date,itp_dept,itp_dept_id,itp_name,itp_detail,itp_ip,itp_anydesk,itp_status,itp_problem,itp_user,itp_picture) VALUES ('$date','$dept_dept','$dept_id','$name','$txtar','$ip','$anydesk','1','','','$path_link')";
+                                    // $qr_line = mysqli_query($conn, $sql_line);
+                                    // if ($qr_line) {
+
+                                    //                                 echo "<script>swal({
+                                    //     title: 'แจ้งสำเร็จ กรุณารอสักครู่...', //ข้อความ เปลี่ยนได้ เช่น บันทึกข้อมูลสำเร็จ!!
+                                    // //  text: 'กรุณารอสักครู่ ไอทีได้รับข้อความที่คุณส่งแล้ว', //ข้อความเปลี่ยนได้ตามการใช้งาน
+                                    //     type: 'success', //success, warning, danger
+                                    //     timer: 2000, //ระยะเวลา redirect 3000 = 3 วิ เพิ่มลดได้
+                                    //     showConfirmButton: false //ปิดการแสดงปุ่มคอนเฟิร์ม ถ้าแก้เป็น true จะแสดงปุ่ม ok ให้คลิกเหมือนเดิม
+                                    // }, function(){
+                                    //     window.location.href ='get_connect_it.php?line=yes'; //หน้าเพจที่เราต้องการให้ redirect ไป อาจใส่เป็นชื่อไฟล์ภายในโปรเจคเราก็ได้ครับ เช่น admin.php
+                                    //     })</script>";
+
+                                    echo $path_link;
+                                    echo "<br>";
+                                    echo $newname;
+                                    echo "<br>";
+                                    echo $_FILES['fileupload']['tmp_name'], $path_copy;
+                                    echo "<br>";
+                                    echo $upload;
                                 }
                             }
+                            // }
 
                             ?>
                         </div>
