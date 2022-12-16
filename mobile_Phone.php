@@ -395,12 +395,14 @@ textarea {
 
                                     </div>
                                     <div class="col-lg-4 col-md-8 col-sm-12">
-                                        <select id="ajax_connect" class="form-select"
-                                            aria-label="Default select example" onchange="user_id()">
-                                            <option value="">--Select Username--</option>
-                                            <!-- <input type="text" name="user" id="" class="form-control" placeholder="--ชื่อผู้แจ้ง--" autocomplete="off"> -->
+                                        <div id="ajax_connect">
+                                            <select class="form-select" aria-label="Default select example"
+                                                name="user_name" id="user_id" onchange="id_us()">
 
-                                        </select>
+                                                <option value="0" id="">--Select Username--</option>
+
+                                            </select>
+                                        </div>
                                     </div>
 
 

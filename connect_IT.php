@@ -321,8 +321,35 @@ body {
     }
 }
 
-.img-phone {
+.img-phone img {
     position: absolute;
+    opacity: 1;
+    display: block;
+    transition: .5s ease;
+    backface-visibility: hidden;
+
+}
+
+.img-qrcode img {
+    position: absolute;
+    border-radius: 5px;
+    left: 300px;
+    bottom: 20px;
+    border: DeepSkyBlue 3px solid ;
+    transition: 1s ease;
+  
+}
+.img-qrcode img:hover{
+-webkit-transform: scale(1.2);
+-ms-transform: scale(1.2);
+transform: scale(1.2);
+transition: 1s ease;
+}
+.text-howto{
+    position: absolute;
+    color:white;
+    bottom: -150px;
+    left:190px;
 }
 
 /* .card {
@@ -334,6 +361,18 @@ body {
 
     <div class="wrapper">
         <div class="img-phone"><img src="./image_problem/phone.png" /></div>
+        <div>
+           
+            <div class="img-qrcode"><img style="width: 150px;" src="./image_problem/qr-code.png" /></div>
+        </div>
+        <div class="text-howto">
+            <p>การใช้งานผ่านอุปกรณ์สมาร์ทโฟน</p>
+            <li>เชื่อมต่ออินเตอร์เน็ตหรือ WIFI ภายในบริษัท</li>
+            <li>กรณี Work From Home ให้เชื่อมต่อ VPN</li>
+            <li>เมื่อเชื่อมต่ออินเทอร์เน็ตแล้ว ให้ทำการ Scan QR-CODE</li>
+            <li>แล้วทำการ ดำเนินการแจ้ง</li>
+            
+        </div>
         <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js"
             integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM" crossorigin="anonymous">
         </script>
@@ -402,12 +441,12 @@ body {
                                     </div>
                                     <div class="col-lg-4 col-md-8 col-sm-12">
                                         <div id="ajax_connect">
-                                        <select class="form-select" aria-label="Default select example" name="user_name"
-                                            id="user_id" onchange="id_us()">
+                                            <select class="form-select" aria-label="Default select example"
+                                                name="user_name" id="user_id" onchange="id_us()">
 
-                                            <option value="0" id="">--Select Username--</option>
-                                           
-                                        </select>
+                                                <option value="0" id="">--Select Username--</option>
+
+                                            </select>
                                         </div>
                                     </div>
 
@@ -453,7 +492,7 @@ body {
                                 </center>
 
 
-                                <div class="col-lg-12 col-md-12 col-sm-12">
+                                <!-- <div class="col-lg-12 col-md-12 col-sm-12">
                                     <table class="table table-striped table-bordered" id="example"
                                         style=" width: 100%;">
                                         <thead>
@@ -516,7 +555,7 @@ body {
                                         ?>
                                         </tbody>
                                     </table>
-                                </div>
+                                </div> -->
                                 <!-- Modal -->
                                 <div class="modal fade" id="exampleModal" tabindex="-1"
                                     aria-labelledby="exampleModalLabel" aria-hidden="true">
