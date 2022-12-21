@@ -14,16 +14,12 @@ date_default_timezone_set("Asia/Bangkok");
 
     <title>IT Connect</title>
 
-    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet"
-        integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link
-        href="https://fonts.googleapis.com/css2?family=Kanit:wght@100&family=Mali:ital,wght@1,200&family=Mitr:wght@200;400&family=Noto+Sans+Thai:wght@200;500&display=swap"
-        rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Kanit:wght@100&family=Mali:ital,wght@1,200&family=Mitr:wght@200;400&family=Noto+Sans+Thai:wght@200;500&display=swap" rel="stylesheet">
     <!-- Google Font: Source Sans Pro -->
-    <link rel="stylesheet"
-        href="https://fonts.googleapis.com/css?family=Source+Sans+Pro:300,400,400i,700&display=fallback">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Source+Sans+Pro:300,400,400i,700&display=fallback">
     <!-- Font Awesome -->
     <link rel="stylesheet" href="plugins/fontawesome-free/css/all.min.css">
     <!-- Ionicons -->
@@ -47,317 +43,317 @@ date_default_timezone_set("Asia/Bangkok");
     <script src="https://cdnjs.cloudflare.com/ajax/libs/sweetalert/1.1.3/sweetalert-dev.js"></script>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/sweetalert/1.1.3/sweetalert.css">
 
-    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.15.4/css/solid.css"
-        integrity="sha384-Tv5i09RULyHKMwX0E8wJUqSOaXlyu3SQxORObAI08iUwIalMmN5L6AvlPX2LMoSE" crossorigin="anonymous" />
-    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.15.4/css/fontawesome.css"
-        integrity="sha384-jLKHWM3JRmfMU0A5x5AkjWkw/EYfGUAGagvnfryNV3F9VqM98XiIH7VBGVoxVSc7" crossorigin="anonymous" />
-    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/css/bootstrap.min.css" rel="stylesheet"
-        integrity="sha384-rbsA2VBKQhggwzxH7pPCaAqO46MgnOM80zW1RWuH61DGLwZJEdK2Kadq2F9CUG65" crossorigin="anonymous">
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.15.4/css/solid.css" integrity="sha384-Tv5i09RULyHKMwX0E8wJUqSOaXlyu3SQxORObAI08iUwIalMmN5L6AvlPX2LMoSE" crossorigin="anonymous" />
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.15.4/css/fontawesome.css" integrity="sha384-jLKHWM3JRmfMU0A5x5AkjWkw/EYfGUAGagvnfryNV3F9VqM98XiIH7VBGVoxVSc7" crossorigin="anonymous" />
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-rbsA2VBKQhggwzxH7pPCaAqO46MgnOM80zW1RWuH61DGLwZJEdK2Kadq2F9CUG65" crossorigin="anonymous">
 </head>
 
 <style>
-.txtarea {
-    width: 500px;
-    height: 100px;
-    /* font-size: 20px; */
-}
-
-.card {
-    background: rgb(2, 0, 36);
-    background: linear-gradient(90deg, rgba(2, 0, 36, 1) 0%, rgba(30, 30, 171, 1) 0%, rgba(0, 212, 255, 1) 100%);
-}
-
-.btns {
-    background: rgb(81, 10, 246);
-    background: linear-gradient(90deg, rgba(81, 10, 246, 1) 0%, rgba(255, 244, 0, 1) 0%, rgba(213, 42, 238, 0.938813025210084) 100%);
-}
-
-html,
-body {
-    background-image: url("img/it.jpeg");
-
-    background-repeat: no-repeat;
-    background-position: center center;
-    background-attachment: fixed;
-    -o-background-size: 100% 100%, auto;
-    -moz-background-size: 100% 100%, auto;
-    -webkit-background-size: 100% 100%, auto;
-    background-size: 100% 100%, auto;
-}
-
-* {
-    font-family: 'Kanit', sans-serif;
-    font-family: 'Mali', cursive;
-    font-family: 'Mitr', sans-serif;
-    font-family: 'Noto Sans Thai', sans-serif;
-}
-
-/* หิมะ */
-
-.snowflake {
-    color: #fff;
-    font-size: 1em;
-    font-family: Arial;
-    text-shadow: 0 0 1px #000;
-}
-
-@-webkit-keyframes snowflakes-fall {
-    0% {
-        top: -10%
+    .txtarea {
+        width: 500px;
+        height: 100px;
+        /* font-size: 20px; */
     }
 
-    100% {
-        top: 100%
-    }
-}
-
-@-webkit-keyframes snowflakes-shake {
-    0% {
-        -webkit-transform: translateX(0px);
-        transform: translateX(0px)
+    .card {
+        background: rgb(2, 0, 36);
+        background: linear-gradient(90deg, rgba(2, 0, 36, 1) 0%, rgba(30, 30, 171, 1) 0%, rgba(0, 212, 255, 1) 100%);
     }
 
-    50% {
-        -webkit-transform: translateX(80px);
-        transform: translateX(80px)
+    .btns {
+        background: rgb(81, 10, 246);
+        background: linear-gradient(90deg, rgba(81, 10, 246, 1) 0%, rgba(255, 244, 0, 1) 0%, rgba(213, 42, 238, 0.938813025210084) 100%);
     }
 
-    100% {
-        -webkit-transform: translateX(0px);
-        transform: translateX(0px)
-    }
-}
+    html,
+    body {
+        background-image: url("img/it.jpeg");
 
-@keyframes snowflakes-fall {
-    0% {
-        top: -10%
-    }
-
-    100% {
-        top: 100%
-    }
-}
-
-@keyframes snowflakes-shake {
-    0% {
-        transform: translateX(0px)
+        background-repeat: no-repeat;
+        background-position: center center;
+        background-attachment: fixed;
+        -o-background-size: 100% 100%, auto;
+        -moz-background-size: 100% 100%, auto;
+        -webkit-background-size: 100% 100%, auto;
+        background-size: 100% 100%, auto;
     }
 
-    50% {
-        transform: translateX(80px)
+    * {
+        font-family: 'Kanit', sans-serif;
+        font-family: 'Mali', cursive;
+        font-family: 'Mitr', sans-serif;
+        font-family: 'Noto Sans Thai', sans-serif;
     }
 
-    100% {
-        transform: translateX(0px)
+    /* หิมะ */
+
+    .snowflake {
+        color: #fff;
+        font-size: 1em;
+        font-family: Arial;
+        text-shadow: 0 0 1px #000;
     }
-}
 
-.snowflake {
-    position: fixed;
-    top: -10%;
-    z-index: 9999;
-    -webkit-user-select: none;
-    -moz-user-select: none;
-    -ms-user-select: none;
-    user-select: none;
-    cursor: default;
-    -webkit-animation-name: snowflakes-fall, snowflakes-shake;
-    -webkit-animation-duration: 18s, 5s;
-    -webkit-animation-timing-function: linear, ease-in-out;
-    -webkit-animation-iteration-count: infinite, infinite;
-    -webkit-animation-play-state: running, running;
-    animation-name: snowflakes-fall, snowflakes-shake;
-    animation-duration: 18s, 5s;
-    animation-timing-function: linear, ease-in-out;
-    animation-iteration-count: infinite, infinite;
-    animation-play-state: running, running
-}
+    @-webkit-keyframes snowflakes-fall {
+        0% {
+            top: -10%
+        }
 
-.snowflake:nth-of-type(0) {
-    left: 1%;
-    -webkit-animation-delay: 0s, 0s;
-    animation-delay: 0s, 0s
-}
-
-.snowflake:nth-of-type(1) {
-    left: 10%;
-    -webkit-animation-delay: 1s, 1s;
-    animation-delay: 1s, 1s
-}
-
-.snowflake:nth-of-type(2) {
-    left: 20%;
-    -webkit-animation-delay: 6s, .5s;
-    animation-delay: 6s, .5s
-}
-
-.snowflake:nth-of-type(3) {
-    left: 30%;
-    -webkit-animation-delay: 4s, 2s;
-    animation-delay: 4s, 2s
-}
-
-.snowflake:nth-of-type(4) {
-    left: 40%;
-    -webkit-animation-delay: 2s, 2s;
-    animation-delay: 2s, 2s
-}
-
-.snowflake:nth-of-type(5) {
-    left: 50%;
-    -webkit-animation-delay: 8s, 3s;
-    animation-delay: 8s, 3s
-}
-
-.snowflake:nth-of-type(6) {
-    left: 60%;
-    -webkit-animation-delay: 6s, 2s;
-    animation-delay: 6s, 2s
-}
-
-.snowflake:nth-of-type(7) {
-    left: 70%;
-    -webkit-animation-delay: 2.5s, 1s;
-    animation-delay: 2.5s, 1s
-}
-
-.snowflake:nth-of-type(8) {
-    left: 80%;
-    -webkit-animation-delay: 1s, 0s;
-    animation-delay: 1s, 0s
-}
-
-.snowflake:nth-of-type(9) {
-    left: 90%;
-    -webkit-animation-delay: 3s, 1.5s;
-    animation-delay: 3s, 1.5s
-}
-
-.snowflake:nth-of-type(10) {
-    right: 5%;
-    -webkit-animation-delay: 10s, 10s;
-    animation-delay: 10s, 10s
-}
-
-.snowflake:nth-of-type(11) {
-    right: 15%;
-    -webkit-animation-delay: 10s, 10s;
-    animation-delay: 10s, 10s
-}
-
-.snowflake:nth-of-type(12) {
-    right: 25%;
-    -webkit-animation-delay: 60s, 50s;
-    animation-delay: 60s, 50s
-}
-
-.snowflake:nth-of-type(13) {
-    right: 35%;
-    -webkit-animation-delay: 40s, 20s;
-    animation-delay: 40s, 20s
-}
-
-.snowflake:nth-of-type(14) {
-    right: 45%;
-    -webkit-animation-delay: 20s, 20s;
-    animation-delay: 20s, 20s
-}
-
-.snowflake:nth-of-type(15) {
-    right: 55%;
-    -webkit-animation-delay: 8.5s, 3.5s;
-    animation-delay: 8.5s, 3.5s
-}
-
-.snowflake:nth-of-type(16) {
-    right: 65%;
-    -webkit-animation-delay: 60.5s, 20.5s;
-    animation-delay: 60.5s, 20.5s
-}
-
-.snowflake:nth-of-type(17) {
-    right: 75%;
-    -webkit-animation-delay: 30s, 10.5s;
-    animation-delay: 30s, 10.5s
-}
-
-.snowflake:nth-of-type(18) {
-    right: 85%;
-    -webkit-animation-delay: 10.5s, 0.5s;
-    animation-delay: 10.5s, 0.5s
-}
-
-.snowflake:nth-of-type(19) {
-    right: 95%;
-    -webkit-animation-delay: 30.5s, 20s;
-    animation-delay: 30.5s, 20s
-}
-
-.animate-charcter {
-
-    border-color: #fff;
-    text-transform: uppercase;
-    background-image: linear-gradient(-225deg,
-            #231557 0%,
-            #44107a 29%,
-            #ff1361 67%,
-            #fff800 100%);
-    background-size: auto auto;
-    background-clip: border-box;
-    background-size: 200% auto;
-    color: #fff;
-    background-clip: text;
-    /* text-fill-color: transparent; */
-    -webkit-background-clip: text;
-    -webkit-text-fill-color: transparent;
-    animation: textclip 2s linear infinite;
-    display: inline-block;
-    font-size: 80px;
-}
-
-@keyframes textclip {
-    to {
-        background-position: 200% center;
+        100% {
+            top: 100%
+        }
     }
-}
 
-.img-phone img {
-    position: absolute;
-    opacity: 1;
-    display: block;
-    transition: .5s ease;
-    backface-visibility: hidden;
+    @-webkit-keyframes snowflakes-shake {
+        0% {
+            -webkit-transform: translateX(0px);
+            transform: translateX(0px)
+        }
 
-}
+        50% {
+            -webkit-transform: translateX(80px);
+            transform: translateX(80px)
+        }
 
-.img-qrcode img {
-    position: absolute;
-    border-radius: 5px;
-    left: 300px;
-    bottom: 20px;
-    border: DeepSkyBlue 3px solid ;
-    transition: 1s ease;
-  
-}
-.img-qrcode img:hover{
--webkit-transform: scale(1.2);
--ms-transform: scale(1.2);
-transform: scale(1.2);
-transition: 1s ease;
-}
-.text-howto{
-    position: absolute;
-    color:white;
-    bottom: -150px;
-    left:190px;
-}
-.ps{
-    position: absolute;
-    bottom: -500px;
-  color : #000;
-}
+        100% {
+            -webkit-transform: translateX(0px);
+            transform: translateX(0px)
+        }
+    }
 
-/* .card {
+    @keyframes snowflakes-fall {
+        0% {
+            top: -10%
+        }
+
+        100% {
+            top: 100%
+        }
+    }
+
+    @keyframes snowflakes-shake {
+        0% {
+            transform: translateX(0px)
+        }
+
+        50% {
+            transform: translateX(80px)
+        }
+
+        100% {
+            transform: translateX(0px)
+        }
+    }
+
+    .snowflake {
+        position: fixed;
+        top: -10%;
+        z-index: 9999;
+        -webkit-user-select: none;
+        -moz-user-select: none;
+        -ms-user-select: none;
+        user-select: none;
+        cursor: default;
+        -webkit-animation-name: snowflakes-fall, snowflakes-shake;
+        -webkit-animation-duration: 18s, 5s;
+        -webkit-animation-timing-function: linear, ease-in-out;
+        -webkit-animation-iteration-count: infinite, infinite;
+        -webkit-animation-play-state: running, running;
+        animation-name: snowflakes-fall, snowflakes-shake;
+        animation-duration: 18s, 5s;
+        animation-timing-function: linear, ease-in-out;
+        animation-iteration-count: infinite, infinite;
+        animation-play-state: running, running
+    }
+
+    .snowflake:nth-of-type(0) {
+        left: 1%;
+        -webkit-animation-delay: 0s, 0s;
+        animation-delay: 0s, 0s
+    }
+
+    .snowflake:nth-of-type(1) {
+        left: 10%;
+        -webkit-animation-delay: 1s, 1s;
+        animation-delay: 1s, 1s
+    }
+
+    .snowflake:nth-of-type(2) {
+        left: 20%;
+        -webkit-animation-delay: 6s, .5s;
+        animation-delay: 6s, .5s
+    }
+
+    .snowflake:nth-of-type(3) {
+        left: 30%;
+        -webkit-animation-delay: 4s, 2s;
+        animation-delay: 4s, 2s
+    }
+
+    .snowflake:nth-of-type(4) {
+        left: 40%;
+        -webkit-animation-delay: 2s, 2s;
+        animation-delay: 2s, 2s
+    }
+
+    .snowflake:nth-of-type(5) {
+        left: 50%;
+        -webkit-animation-delay: 8s, 3s;
+        animation-delay: 8s, 3s
+    }
+
+    .snowflake:nth-of-type(6) {
+        left: 60%;
+        -webkit-animation-delay: 6s, 2s;
+        animation-delay: 6s, 2s
+    }
+
+    .snowflake:nth-of-type(7) {
+        left: 70%;
+        -webkit-animation-delay: 2.5s, 1s;
+        animation-delay: 2.5s, 1s
+    }
+
+    .snowflake:nth-of-type(8) {
+        left: 80%;
+        -webkit-animation-delay: 1s, 0s;
+        animation-delay: 1s, 0s
+    }
+
+    .snowflake:nth-of-type(9) {
+        left: 90%;
+        -webkit-animation-delay: 3s, 1.5s;
+        animation-delay: 3s, 1.5s
+    }
+
+    .snowflake:nth-of-type(10) {
+        right: 5%;
+        -webkit-animation-delay: 10s, 10s;
+        animation-delay: 10s, 10s
+    }
+
+    .snowflake:nth-of-type(11) {
+        right: 15%;
+        -webkit-animation-delay: 10s, 10s;
+        animation-delay: 10s, 10s
+    }
+
+    .snowflake:nth-of-type(12) {
+        right: 25%;
+        -webkit-animation-delay: 60s, 50s;
+        animation-delay: 60s, 50s
+    }
+
+    .snowflake:nth-of-type(13) {
+        right: 35%;
+        -webkit-animation-delay: 40s, 20s;
+        animation-delay: 40s, 20s
+    }
+
+    .snowflake:nth-of-type(14) {
+        right: 45%;
+        -webkit-animation-delay: 20s, 20s;
+        animation-delay: 20s, 20s
+    }
+
+    .snowflake:nth-of-type(15) {
+        right: 55%;
+        -webkit-animation-delay: 8.5s, 3.5s;
+        animation-delay: 8.5s, 3.5s
+    }
+
+    .snowflake:nth-of-type(16) {
+        right: 65%;
+        -webkit-animation-delay: 60.5s, 20.5s;
+        animation-delay: 60.5s, 20.5s
+    }
+
+    .snowflake:nth-of-type(17) {
+        right: 75%;
+        -webkit-animation-delay: 30s, 10.5s;
+        animation-delay: 30s, 10.5s
+    }
+
+    .snowflake:nth-of-type(18) {
+        right: 85%;
+        -webkit-animation-delay: 10.5s, 0.5s;
+        animation-delay: 10.5s, 0.5s
+    }
+
+    .snowflake:nth-of-type(19) {
+        right: 95%;
+        -webkit-animation-delay: 30.5s, 20s;
+        animation-delay: 30.5s, 20s
+    }
+
+    .animate-charcter {
+
+        border-color: #fff;
+        text-transform: uppercase;
+        background-image: linear-gradient(-225deg,
+                #231557 0%,
+                #44107a 29%,
+                #ff1361 67%,
+                #fff800 100%);
+        background-size: auto auto;
+        background-clip: border-box;
+        background-size: 200% auto;
+        color: #fff;
+        background-clip: text;
+        /* text-fill-color: transparent; */
+        -webkit-background-clip: text;
+        -webkit-text-fill-color: transparent;
+        animation: textclip 2s linear infinite;
+        display: inline-block;
+        font-size: 80px;
+    }
+
+    @keyframes textclip {
+        to {
+            background-position: 200% center;
+        }
+    }
+
+    .img-phone img {
+        position: absolute;
+        opacity: 1;
+        display: block;
+        transition: .5s ease;
+        backface-visibility: hidden;
+
+    }
+
+    .img-qrcode img {
+        position: absolute;
+        border-radius: 5px;
+        left: 300px;
+        bottom: 20px;
+        border: DeepSkyBlue 3px solid;
+        transition: 1s ease;
+
+    }
+
+    .img-qrcode img:hover {
+        -webkit-transform: scale(1.2);
+        -ms-transform: scale(1.2);
+        transform: scale(1.2);
+        transition: 1s ease;
+    }
+
+    .text-howto {
+        position: absolute;
+        color: white;
+        bottom: -150px;
+        left: 190px;
+    }
+
+    .ps {
+        position: absolute;
+        bottom: -500px;
+        color: #000;
+    }
+
+    /* .card {
         background-color: #fff;
     } */
 </style>
@@ -367,7 +363,7 @@ transition: 1s ease;
     <div class="wrapper">
         <div class="img-phone"><img src="./image_problem/phone.png" /></div>
         <div>
-           
+
             <div class="img-qrcode"><img style="width: 150px;" src="./image_problem/qr-code.png" /></div>
         </div>
         <div class="text-howto">
@@ -376,10 +372,9 @@ transition: 1s ease;
             <li>กรณี Work From Home ให้เชื่อมต่อ VPN</li>
             <li>เมื่อเชื่อมต่ออินเทอร์เน็ตแล้ว ให้ทำการ Scan QR-CODE ผ่าน Line</li>
             <li>แล้วทำการ ดำเนินการแจ้ง</li>
-             
+
         </div>
-        <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js"
-            integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM" crossorigin="anonymous">
+        <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM" crossorigin="anonymous">
         </script>
         <div class="container">
 
@@ -407,8 +402,7 @@ transition: 1s ease;
                                         <h3 class="animate-charcter"><span class=""> แจ้งปัญหาไอที</span></h3>
                                         <br>
 
-                                        <h3 style="color: white;"> <span class="badge badge-success"><a
-                                                    href="files/connect_it.rar" download style="color:white">Your IP
+                                        <h3 style="color: white;"> <span class="badge badge-success"><a href="files/connect_it.rar" download style="color:white">Your IP
                                                     Address: <?= $ip = $_SERVER['REMOTE_ADDR']; ?></a></span></h3>
                                     </div>
 
@@ -417,13 +411,11 @@ transition: 1s ease;
                                         <label for="" style="color:white" class="badge badge-warning">
                                             <h6>แนบรูปภาพ</h6>
                                         </label>
-                                        <input type="file" id="fileupload" name="fileupload" class="form-control"
-                                            accept="image/gif, image/jpeg, image/png" />
+                                        <input type="file" id="fileupload" name="fileupload" class="form-control" accept="image/gif, image/jpeg, image/png" />
                                     </div>
 
                                     <div class="col-lg-4 col-md-8 col-sm-12 mb-2">
-                                        <select class="form-select" aria-label="Default select example" name="dept"
-                                            id="dept" onchange="getdept()">
+                                        <select class="form-select" aria-label="Default select example" name="dept" id="dept" onchange="getdept()">
 
                                             <option value="">--Select Department--</option>
                                             <?php
@@ -435,8 +427,8 @@ transition: 1s ease;
                                             while ($rs = mysqli_fetch_array($qr_po)) {
                                             ?>
 
-                                            <option value="<?= $rs['dept_id'] ?>"><?= $rs['dept_name'] ?>
-                                                (<?= $rs['dept_description'] ?>)</option>
+                                                <option value="<?= $rs['dept_id'] ?>"><?= $rs['dept_name'] ?>
+                                                    (<?= $rs['dept_description'] ?>)</option>
                                             <?php
                                             }
                                             ?>
@@ -446,8 +438,7 @@ transition: 1s ease;
                                     </div>
                                     <div class="col-lg-4 col-md-8 col-sm-12">
                                         <div id="ajax_connect">
-                                            <select class="form-select" aria-label="Default select example"
-                                                name="user_name" id="user_id" onchange="id_us()">
+                                            <select class="form-select" aria-label="Default select example" name="user_name" id="user_id" onchange="id_us()">
 
                                                 <option value="0" id="">--Select Username--</option>
 
@@ -458,39 +449,38 @@ transition: 1s ease;
 
 
                                     <script>
-                                    // $(document).ready(function() {
-                                    function getdept() {
-                                        let id_dept = document.getElementById("dept").value;
-                                        console.log("Dept_Key =>>" + id_dept);
+                                        // $(document).ready(function() {
+                                        function getdept() {
+                                            let id_dept = document.getElementById("dept").value;
+                                            console.log("Dept_Key =>>" + id_dept);
 
-                                        $.ajax({
-                                            url: 'ajax/get_connect.php?key=' + id_dept,
-                                            type: 'get',
-                                            success: function(result) {
-                                                $('#ajax_connect').html(result);
-                                                console.log("Get DATA Successfully");
-                                                // console.log(result);
+                                            $.ajax({
+                                                url: 'ajax/get_connect.php?key=' + id_dept,
+                                                type: 'get',
+                                                success: function(result) {
+                                                    $('#ajax_connect').html(result);
+                                                    console.log("Get DATA Successfully");
+                                                    // console.log(result);
 
 
-                                            }
-                                        });
+                                                }
+                                            });
 
-                                    }
+                                        }
 
-                                    function id_us() {
-                                        let user_id = document.getElementById("user_id").value;
-                                        console.log(user_id);
-                                    }
+                                        function id_us() {
+                                            let user_id = document.getElementById("user_id").value;
+                                            console.log(user_id);
+                                        }
 
-                                    // });
+                                        // });
                                     </script>
                                     <br>
                                     <div class="col-lg-6 col-md-8 col-sm-8">
                                         <Textarea name="txtar" class="txtarea" placeholder="--รายละเอียด--"></Textarea>
                                     </div>
                                     <br>
-                                    <button name="next" type="submit"
-                                        class="btn btn-warning btns">ดำเนินการแจ้ง</button>
+                                    <button name="next" type="submit" class="btn btn-warning btns">ดำเนินการแจ้ง</button>
                                     <br>
                                     <br>
                                     <?= @$path_link ?>
@@ -499,9 +489,13 @@ transition: 1s ease;
 <br>
 
                                 <div class="col-lg-12 col-md-12 col-sm-12 ">
+<<<<<<< HEAD
                                     
                                     <table class="table table-striped table-bordered ps" id="example"
                                         style=" width: 100%;">
+=======
+                                    <table class="table table-striped table-bordered ps" id="example" style=" width: 100%;">
+>>>>>>> refs/remotes/origin/main
                                         <thead>
                                             <tr>
 
@@ -517,82 +511,83 @@ transition: 1s ease;
                                         <tbody>
 
                                             <?php
-                                        // $servername = 'localhost';
-                                        // $username = 'root';
-                                        // $password = '';
-                                        // $db_name = 'louis_db';
+                                            // $servername = 'localhost';
+                                            // $username = 'root';
+                                            // $password = '';
+                                            // $db_name = 'louis_db';
 
-                                        // $conn = mysqli_connect($servername, $username, $password, $db_name);
-                                        $i = 1;
-                                        $sql_rp = "SELECT * FROM it_problem order by itp_id desc LIMIT 5;";
-                                        $qr_rp = mysqli_query($conn, $sql_rp);
+                                            // $conn = mysqli_connect($servername, $username, $password, $db_name);
+                                            $i = 1;
+                                            $sql_rp = "SELECT * FROM it_problem order by itp_id desc LIMIT 5;";
+                                            $qr_rp = mysqli_query($conn, $sql_rp);
 
-                                        while ($rs_rp = mysqli_fetch_assoc($qr_rp)) {
-                                        ?>
-                                            <tr>
+                                            while ($rs_rp = mysqli_fetch_assoc($qr_rp)) {
+                                            ?>
+                                                <tr>
 
-                                                <td style="color:white;"><?= $rs_rp['itp_date'] ?></td>
-                                                <td style="color:white;"><?= $rs_rp["itp_dept"] ?></td>
-                                                <td style="color:white;"><?= $rs_rp["itp_name"] ?></td>
-                                                <td style="color:white;"><?= $rs_rp["itp_detail"] ?></td>
-                                                <td style="color:white;">
-                                                    <p style="font-size: 17px;"><span
-                                                            class="badge badge-warning"><?= $rs_rp['itp_ip'] ?></span>
-                                                    </p>
-                                                </td>
-                                                <td style="text-align:center ;">
-                                                    <?php
-                                                    if ($rs_rp['itp_status'] == 1)
-                                                        echo "<button type='button' onClick='momo()' class='btn btn-primary submit' data-bs-toggle='modal' data-id='{$rs_rp['itp_id']}'  data-bs-target='#exampleModal'>
+                                                    <td style="color:white;"><?= $rs_rp['itp_date'] ?></td>
+                                                    <td style="color:white;"><?= $rs_rp["itp_dept"] ?></td>
+                                                    <td style="color:white;"><?= $rs_rp["itp_name"] ?></td>
+                                                    <td style="color:white;">
+                                                  
+                                                    <?= $rs_rp["itp_detail"] ?><br>
+                                                    <span class="badge bg-success">แจ้งปัญหาแล้ว</span>
+
+                                                    </td>
+                                                    <td style="color:white;">
+                                                        <p style="font-size: 17px;"><span class="badge badge-warning"><?= $rs_rp['itp_ip'] ?></span>
+                                                        </p>
+                                                    </td>
+                                                    <td style="text-align:center ;">
+                                                        <?php
+                                                        if ($rs_rp['itp_status'] == 1)
+                                                            echo "<button type='button' onClick='momo()' class='btn btn-primary submit' data-bs-toggle='modal' data-id='{$rs_rp['itp_id']}'  data-bs-target='#exampleModal'>
                                                 แก้ไขปัญหา
                                             </button>";
-                                                    if ($rs_rp['itp_status'] == 2) {
-                                                        echo "<button type='button' class='btn btn-success'>
+                                                        if ($rs_rp['itp_status'] == 2) {
+                                                            echo "<button type='button' class='btn btn-success'>
                                                 สำเร็จ
                                             </button>";
-                                                    }
-                                                    ?>
+                                                        }
+                                                        ?>
 
-                                                </td>
-                                            </tr>
+                                                    </td>
+                                                </tr>
                                             <?php
-                                            $i++;
-                                        }
+                                                $i++;
+                                            }
 
-                                        ?>
+                                            ?>
                                         </tbody>
                                     </table>
-                                </div> 
+                                </div>
                                 <!-- Modal -->
-                                <div class="modal fade" id="exampleModal" tabindex="-1"
-                                    aria-labelledby="exampleModalLabel" aria-hidden="true">
+                                <div class="modal fade" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
                                     <div class="modal-dialog modal-lg">
                                         <div class="modal-content">
                                             <div class="modal-header">
                                                 <h1 class="modal-title fs-5" id="exampleModalLabel">IT Support </h1>
-                                                <button type="button" class="btn-close" data-bs-dismiss="modal"
-                                                    aria-label="Close"></button>
+                                                <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
                                             </div>
                                             <div class="modal-body">
-                                                <div><input type="text" name="ddd" id="ddd"
-                                                        class="form-control"></div>
+                                                <div><input type="text" name="ddd" id="ddd" class="form-control"></div>
                                                 <script>
-                                                function momo() {
-                                                    $(document).ready(function() {
-                                                        let key_id = document.getElementById("ddd").value;
-                                                        console.log(key_id);
-                                                        $.ajax({
-                                                            url: 'ajax/image.php?key=' + key_id,
-                                                            type: 'get',
-                                                            success: function(result) {
-                                                                $('#imgmomo').html(result);
-                                                                console.log("Image");
+                                                    function momo() {
+                                                        $(document).ready(function() {
+                                                            let key_id = document.getElementById("ddd").value;
+                                                            console.log(key_id);
+                                                            $.ajax({
+                                                                url: 'ajax/image.php?key=' + key_id,
+                                                                type: 'get',
+                                                                success: function(result) {
+                                                                    $('#imgmomo').html(result);
+                                                                    console.log("Image");
 
 
-                                                            }
+                                                                }
+                                                            });
                                                         });
-                                                    });
-                                                }
+                                                    }
                                                 </script>
                                                 <label for="" class="label-control">วิธีแก้ไขปัญหา</label>
                                                 <input type="text" name="problem" id="" class="form-control">
@@ -604,8 +599,7 @@ transition: 1s ease;
                                                 </center>
                                             </div>
                                             <div class="modal-footer">
-                                                <button type="button" class="btn btn-secondary"
-                                                    data-bs-dismiss="modal">Close</button>
+                                                <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
                                                 <button type="submit" name="btn_save" class="btn btn-primary">Save
                                                     changes</button>
                                             </div>
@@ -632,14 +626,14 @@ transition: 1s ease;
                                 </div>
 
                                 <script>
-                                $(document).ready(function() {
-                                    $('.submit').click(function() {
-                                        // $('#ddd').text($(this).data('id'));
-                                        let id = document.getElementById("ddd").value = $(this).data(
-                                            'id');
-                                        console.log('kk');
-                                    });
-                                })
+                                    $(document).ready(function() {
+                                        $('.submit').click(function() {
+                                            // $('#ddd').text($(this).data('id'));
+                                            let id = document.getElementById("ddd").value = $(this).data(
+                                                'id');
+                                            console.log('kk');
+                                        });
+                                    })
                                 </script>
                             </form>
                             <?php
@@ -670,7 +664,7 @@ transition: 1s ease;
                                         window.location.href ='connect_it.php'; //หน้าเพจที่เราต้องการให้ redirect ไป อาจใส่เป็นชื่อไฟล์ภายในโปรเจคเราก็ได้ครับ เช่น admin.php
                                         })</script>";
                                 } else {
-                                   
+
 
                                     if ($upload <> '') {   //not select file
                                         //โฟลเดอร์ที่จะ upload file เข้าไป 
@@ -733,14 +727,14 @@ transition: 1s ease;
                                         // echo "<br>";
                                         // echo $upload;
                                     }
-                                    if($upload == null){
+                                    if ($upload == null) {
                                         $path_link = '1';
-                                        }
+                                    }
                                     $sql_line = "INSERT INTO it_problem (itp_date,itp_dept,itp_dept_id,itp_name,itp_detail,itp_ip,itp_anydesk,itp_status,itp_problem,itp_user,itp_picture) VALUES ('$date','$dept_dept','$dept_id','$name','$txtar','$ip','$anydesk','1','','','$path_link')";
                                     $qr_line = mysqli_query($conn, $sql_line);
                                     if ($qr_line) {
 
-                                                                    echo "<script>swal({
+                                        echo "<script>swal({
                                         title: 'แจ้งสำเร็จ กรุณารอสักครู่...', //ข้อความ เปลี่ยนได้ เช่น บันทึกข้อมูลสำเร็จ!!
                                     //  text: 'กรุณารอสักครู่ ไอทีได้รับข้อความที่คุณส่งแล้ว', //ข้อความเปลี่ยนได้ตามการใช้งาน
                                         type: 'success', //success, warning, danger
@@ -749,11 +743,9 @@ transition: 1s ease;
                                     }, function(){
                                         window.location.href ='get_connect_it.php?line=yes'; //หน้าเพจที่เราต้องการให้ redirect ไป อาจใส่เป็นชื่อไฟล์ภายในโปรเจคเราก็ได้ครับ เช่น admin.php
                                         })</script>";
-
-                                   
+                                    }
                                 }
                             }
-                             }
 
                             ?>
                         </div>
