@@ -496,8 +496,10 @@ transition: 1s ease;
                                     <?= @$path_link ?>
                                 </center>
 
+<br>
 
                                 <div class="col-lg-12 col-md-12 col-sm-12 ">
+                                    
                                     <table class="table table-striped table-bordered ps" id="example"
                                         style=" width: 100%;">
                                         <thead>
