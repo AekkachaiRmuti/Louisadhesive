@@ -521,7 +521,7 @@ textarea {
                                                     aria-label="Close"></button>
                                             </div>
                                             <div class="modal-body">
-                                                <div style=""><input type="text" name="ddd" id="ddd"
+                                                <div><input type="text" name="ddd" id="ddd"
                                                         class="form-control"></div>
                                                 <script>
                                                 function momo() {

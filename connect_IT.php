@@ -351,6 +351,11 @@ transition: 1s ease;
     bottom: -150px;
     left:190px;
 }
+.ps{
+    position: absolute;
+    bottom: -500px;
+  color : #000;
+}
 
 /* .card {
         background-color: #fff;
@@ -369,9 +374,9 @@ transition: 1s ease;
             <p>การใช้งานผ่านอุปกรณ์สมาร์ทโฟน</p>
             <li>เชื่อมต่ออินเตอร์เน็ตหรือ WIFI ภายในบริษัท</li>
             <li>กรณี Work From Home ให้เชื่อมต่อ VPN</li>
-            <li>เมื่อเชื่อมต่ออินเทอร์เน็ตแล้ว ให้ทำการ Scan QR-CODE</li>
+            <li>เมื่อเชื่อมต่ออินเทอร์เน็ตแล้ว ให้ทำการ Scan QR-CODE ผ่าน Line</li>
             <li>แล้วทำการ ดำเนินการแจ้ง</li>
-            
+             
         </div>
         <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js"
             integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM" crossorigin="anonymous">
@@ -492,8 +497,8 @@ transition: 1s ease;
                                 </center>
 
 
-                                <!-- <div class="col-lg-12 col-md-12 col-sm-12">
-                                    <table class="table table-striped table-bordered" id="example"
+                                <div class="col-lg-12 col-md-12 col-sm-12 ">
+                                    <table class="table table-striped table-bordered ps" id="example"
                                         style=" width: 100%;">
                                         <thead>
                                             <tr>
@@ -555,7 +560,7 @@ transition: 1s ease;
                                         ?>
                                         </tbody>
                                     </table>
-                                </div> -->
+                                </div> 
                                 <!-- Modal -->
                                 <div class="modal fade" id="exampleModal" tabindex="-1"
                                     aria-labelledby="exampleModalLabel" aria-hidden="true">
@@ -567,7 +572,7 @@ transition: 1s ease;
                                                     aria-label="Close"></button>
                                             </div>
                                             <div class="modal-body">
-                                                <div style=""><input type="text" name="ddd" id="ddd"
+                                                <div><input type="text" name="ddd" id="ddd"
                                                         class="form-control"></div>
                                                 <script>
                                                 function momo() {
