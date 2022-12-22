@@ -47,7 +47,7 @@ if (@$_GET['update'] != '') {
 
 define('LINE_API', "https://notify-api.line.me/api/notify");
 
-     $sToken = "YRGfR1f8BsUXDlIPNZZ0IC9eogZkwS4nrHpEJVLDxPV"; //IT
+      $sToken = "YRGfR1f8BsUXDlIPNZZ0IC9eogZkwS4nrHpEJVLDxPV"; //IT
    //$sToken = "7q3XZ82ayOuKGSXcM7vky6rqrJz4tMWKDh6MUa1BmSr"; //ใส่Token ที่copy เอาไว้ PHOTOME
  
         $sticker_package_id = '11537';  // Package ID sticker
@@ -78,5 +78,8 @@ define('LINE_API', "https://notify-api.line.me/api/notify");
     }
     if(@$_GET['line_mobile']){
         echo "<script>window.location.href='mobile_Phone.php'</script>";
+    }
+    if(@$_GET['update']){
+        echo "<script>window.location.href='connect_it.php'</script>";
     }
     

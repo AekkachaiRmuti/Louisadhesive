@@ -356,24 +356,29 @@ date_default_timezone_set("Asia/Bangkok");
     /* .card {
         background-color: #fff;
     } */
+    .table {
+        background-color: #F2F8FA;
+      
+
+    }
 </style>
 
 <body class="hold-transition sidebar-mini layout-fixed">
 
     <div class="wrapper">
-        <div class="img-phone"><img src="./image_problem/phone.png" /></div>
+        <!-- <div class="img-phone"><img src="./image_problem/phone.png" /></div>
         <div>
 
             <div class="img-qrcode"><img style="width: 150px;" src="./image_problem/qr-code.png" /></div>
-        </div>
-        <div class="text-howto">
+        </div> -->
+        <!-- <div class="text-howto">
             <p>การใช้งานผ่านอุปกรณ์สมาร์ทโฟน</p>
             <li>เชื่อมต่ออินเตอร์เน็ตหรือ WIFI ภายในบริษัท</li>
             <li>กรณี Work From Home ให้เชื่อมต่อ VPN</li>
             <li>เมื่อเชื่อมต่ออินเทอร์เน็ตแล้ว ให้ทำการ Scan QR-CODE ผ่าน Line</li>
             <li>แล้วทำการ ดำเนินการแจ้ง</li>
 
-        </div>
+        </div> -->
         <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM" crossorigin="anonymous">
         </script>
         <div class="container">
@@ -480,31 +485,24 @@ date_default_timezone_set("Asia/Bangkok");
                                         <Textarea name="txtar" class="txtarea" placeholder="--รายละเอียด--"></Textarea>
                                     </div>
                                     <br>
-                                    <button name="next" type="submit" class="btn btn-warning btns">ดำเนินการแจ้ง</button>
-                                    <br>
-                                    <br>
+                                    <button name="next" type="submit" class="btn btn-warning btns">SEND</button>
+
                                     <?= @$path_link ?>
                                 </center>
-
 <br>
-
                                 <div class="col-lg-12 col-md-12 col-sm-12 ">
-<<<<<<< HEAD
-                                    
-                                    <table class="table table-striped table-bordered ps" id="example"
-                                        style=" width: 100%;">
-=======
-                                    <table class="table table-striped table-bordered ps" id="example" style=" width: 100%;">
->>>>>>> refs/remotes/origin/main
+
+                                    <table class="table table-bordered " id="example" style=" width: 100%;">
+
                                         <thead>
                                             <tr>
 
-                                                <th style="text-align: center; color:white;">วันที่แจ้งปัญหา</th>
-                                                <th style="text-align: center; color:white;">แผนก</th>
-                                                <th style="text-align: center; color:white;">ชื่อผู้แจ้ง</th>
-                                                <th style="text-align: center; color:white;">รายละเอียดปัญหา</th>
-                                                <th style="text-align: center; color:white;">IP Address</th>
-                                                <th style="text-align: center; color:white;">จัดการ</th>
+                                                <th style="text-align: center;">วันที่แจ้งปัญหา</th>
+                                                <th style="text-align: center;">แผนก</th>
+                                                <th style="text-align: center;">ชื่อผู้แจ้ง</th>
+                                                <th style="text-align: center;">รายละเอียดปัญหา</th>
+                                                <th style="text-align: center;">IP Address</th>
+                                               
 
                                             </tr>
                                         </thead>
@@ -525,33 +523,31 @@ date_default_timezone_set("Asia/Bangkok");
                                             ?>
                                                 <tr>
 
-                                                    <td style="color:white;"><?= $rs_rp['itp_date'] ?></td>
-                                                    <td style="color:white;"><?= $rs_rp["itp_dept"] ?></td>
-                                                    <td style="color:white;"><?= $rs_rp["itp_name"] ?></td>
-                                                    <td style="color:white;">
-                                                  
-                                                    <?= $rs_rp["itp_detail"] ?><br>
-                                                    <span class="badge bg-success">แจ้งปัญหาแล้ว</span>
+                                                    <td><?= $rs_rp['itp_date'] ?></td>
+                                                    <td><?= $rs_rp["itp_dept"] ?></td>
+                                                    <td><?= $rs_rp["itp_name"] ?></td>
+                                                    <td>
+                                                        <?= $rs_rp["itp_detail"] ?><br>
+                                                        <span class="badge bg-primary">แจ้งปัญหาแล้ว</span>
+                                                        <?php if ($rs_rp['itp_status'] == 1){
+                                                            echo "<button onClick='momo()' class='btn btn-primary' data-bs-toggle='modal' data-id='{$rs_rp['itp_id']}'  data-bs-target='#exampleModal'>
+                                                รอดำเนินการ
+                                            </button>";}
+                                                        if ($rs_rp['itp_status'] == 2) {
+                                                            echo "<span type='button' class='badge bg-success'>
+                                                สำเร็จ
+                                            </span>";}
+                                            ?>
 
                                                     </td>
-                                                    <td style="color:white;">
+                                                    <td>
                                                         <p style="font-size: 17px;"><span class="badge badge-warning"><?= $rs_rp['itp_ip'] ?></span>
                                                         </p>
                                                     </td>
-                                                    <td style="text-align:center ;">
-                                                        <?php
-                                                        if ($rs_rp['itp_status'] == 1)
-                                                            echo "<button type='button' onClick='momo()' class='btn btn-primary submit' data-bs-toggle='modal' data-id='{$rs_rp['itp_id']}'  data-bs-target='#exampleModal'>
-                                                แก้ไขปัญหา
-                                            </button>";
-                                                        if ($rs_rp['itp_status'] == 2) {
-                                                            echo "<button type='button' class='btn btn-success'>
-                                                สำเร็จ
-                                            </button>";
-                                                        }
-                                                        ?>
+                                                   
+                                                       
 
-                                                    </td>
+                                                   
                                                 </tr>
                                             <?php
                                                 $i++;
@@ -570,6 +566,35 @@ date_default_timezone_set("Asia/Bangkok");
                                                 <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
                                             </div>
                                             <div class="modal-body">
+                                                <label for="">กรุณากรอกรหัสผ่าน</label>
+                                                <input type="password" class="form-control" onkeyup="pw()" placeholder="Password" id="pass">
+                                                <div id="ok"></div>
+                                                <script>
+                                                    let lb1 ='<label for="" class="label-control">วิธีแก้ไขปัญหา</label>';
+                                                    let lb2 ='<label for="" class="label-control">ผู้ดำเนินการ</label>';
+                                                    let por = '<input type="text" name="problem" id="us_problem" class="form-control" >';
+                                                    let user_s ='<input type="text" name="user" id="user_s" class="form-control" >';
+                                                    function pw() {
+                                                        let x = document.getElementById("pass").value;
+                                                        let us_problem = document.getElementById("us_problem");
+                                                        // x.value = x.value.toUpperCase();
+                                                        console.log(x);
+                                                        if (x == 'GAsYGH6D' || x == 'it01') {
+                                                            $('#lb1').html(lb1)
+                                                            $('#pro').html(por)
+                                                            $('#lb2').html(lb2)
+                                                            $('#user_s').html(user_s)
+                                                            $('#ok').html('<a style="color:red;">รหัสผ่านถูกต้อง</a>')
+                                                            // document.getElementById("pro") = '<input type="text" name="" id="us_problem" class="form-control" >';
+                                                           
+                                                        }else{
+                                                            $('#lb1').html()
+                                                            $('#pro').html()
+                                                            $('#lb2').html()
+                                                            $('#user_s').html()
+                                                        }
+                                                    }
+                                                </script>
                                                 <div><input type="text" name="ddd" id="ddd" class="form-control"></div>
                                                 <script>
                                                     function momo() {
@@ -589,10 +614,10 @@ date_default_timezone_set("Asia/Bangkok");
                                                         });
                                                     }
                                                 </script>
-                                                <label for="" class="label-control">วิธีแก้ไขปัญหา</label>
-                                                <input type="text" name="problem" id="" class="form-control">
-                                                <label for="" class="label-control">ผู้ดำเนินการ</label>
-                                                <input type="text" name="user" class="form-control">
+                                               <div id="lb1"></div>
+                                                <div id="pro"></div>
+                                                <div id="lb2"></div>
+                                                <div id="user_s"></div>
 
                                                 <center>
                                                     <div id="imgmomo"></div>
