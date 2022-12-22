@@ -358,7 +358,7 @@ date_default_timezone_set("Asia/Bangkok");
     } */
     .table {
         background-color: #F2F8FA;
-      
+
 
     }
 </style>
@@ -489,7 +489,7 @@ date_default_timezone_set("Asia/Bangkok");
 
                                     <?= @$path_link ?>
                                 </center>
-<br>
+                                <br>
                                 <div class="col-lg-12 col-md-12 col-sm-12 ">
 
                                     <table class="table table-bordered " id="example" style=" width: 100%;">
@@ -502,7 +502,7 @@ date_default_timezone_set("Asia/Bangkok");
                                                 <th style="text-align: center;">ชื่อผู้แจ้ง</th>
                                                 <th style="text-align: center;">รายละเอียดปัญหา</th>
                                                 <th style="text-align: center;">IP Address</th>
-                                               
+
 
                                             </tr>
                                         </thead>
@@ -529,25 +529,39 @@ date_default_timezone_set("Asia/Bangkok");
                                                     <td>
                                                         <?= $rs_rp["itp_detail"] ?><br>
                                                         <span class="badge bg-primary">แจ้งปัญหาแล้ว</span>
-                                                        <?php if ($rs_rp['itp_status'] == 1){
-                                                            echo "<button onClick='momo()' class='btn btn-primary' data-bs-toggle='modal' data-id='{$rs_rp['itp_id']}'  data-bs-target='#exampleModal'>
-                                                รอดำเนินการ
-                                            </button>";}
+                                                        <?php if ($rs_rp['itp_status'] == 1) {
+                                                        ?>
+
+                                                            <button type="button" id="btn-modal<?=$i?>" onclick="momo()" class="badge bg-info" data-bs-toggle="modal" data-id="<?= $rs_rp['itp_id'] ?>" data-bs-target="#exampleModal">
+                                                                รอดำเนินการ
+                                                            </button>
+                                                            <script>
+                                                                $(document).ready(function() {
+                                                                    $('#btn-modal<?=$i?>').click(function() {
+                                                                        // $('#ddd').text($(this).data('id'));
+                                                                        let id = document.getElementById("ddd").value = $(this).data('id');
+                                                                        console.log('kk');
+                                                                    });
+                                                                })
+                                                            </script>
+                                                        <?php
+                                                        }
                                                         if ($rs_rp['itp_status'] == 2) {
                                                             echo "<span type='button' class='badge bg-success'>
                                                 สำเร็จ
-                                            </span>";}
-                                            ?>
+                                            </span>";
+                                                        }
+                                                        ?>
 
                                                     </td>
                                                     <td>
                                                         <p style="font-size: 17px;"><span class="badge badge-warning"><?= $rs_rp['itp_ip'] ?></span>
                                                         </p>
                                                     </td>
-                                                   
-                                                       
 
-                                                   
+
+
+
                                                 </tr>
                                             <?php
                                                 $i++;
@@ -570,10 +584,11 @@ date_default_timezone_set("Asia/Bangkok");
                                                 <input type="password" class="form-control" onkeyup="pw()" placeholder="Password" id="pass">
                                                 <div id="ok"></div>
                                                 <script>
-                                                    let lb1 ='<label for="" class="label-control">วิธีแก้ไขปัญหา</label>';
-                                                    let lb2 ='<label for="" class="label-control">ผู้ดำเนินการ</label>';
+                                                    let lb1 = '<label for="" class="label-control">วิธีแก้ไขปัญหา</label>';
+                                                    let lb2 = '<label for="" class="label-control">ผู้ดำเนินการ</label>';
                                                     let por = '<input type="text" name="problem" id="us_problem" class="form-control" >';
-                                                    let user_s ='<input type="text" name="user" id="user_s" class="form-control" >';
+                                                    let user_s = '<input type="text" name="user" id="user_s" class="form-control" >';
+
                                                     function pw() {
                                                         let x = document.getElementById("pass").value;
                                                         let us_problem = document.getElementById("us_problem");
@@ -586,8 +601,8 @@ date_default_timezone_set("Asia/Bangkok");
                                                             $('#user_s').html(user_s)
                                                             $('#ok').html('<a style="color:red;">รหัสผ่านถูกต้อง</a>')
                                                             // document.getElementById("pro") = '<input type="text" name="" id="us_problem" class="form-control" >';
-                                                           
-                                                        }else{
+
+                                                        } else {
                                                             $('#lb1').html()
                                                             $('#pro').html()
                                                             $('#lb2').html()
@@ -595,7 +610,7 @@ date_default_timezone_set("Asia/Bangkok");
                                                         }
                                                     }
                                                 </script>
-                                                <div><input type="text" name="ddd" id="ddd" class="form-control"></div>
+                                                <div style="display: none;"><input type="text" name="ddd" id="ddd" class="form-control"></div>
                                                 <script>
                                                     function momo() {
                                                         $(document).ready(function() {
@@ -606,7 +621,7 @@ date_default_timezone_set("Asia/Bangkok");
                                                                 type: 'get',
                                                                 success: function(result) {
                                                                     $('#imgmomo').html(result);
-                                                                    console.log("Image");
+                                                                    console.log(result);
 
 
                                                                 }
@@ -614,7 +629,7 @@ date_default_timezone_set("Asia/Bangkok");
                                                         });
                                                     }
                                                 </script>
-                                               <div id="lb1"></div>
+                                                <div id="lb1"></div>
                                                 <div id="pro"></div>
                                                 <div id="lb2"></div>
                                                 <div id="user_s"></div>
@@ -650,16 +665,7 @@ date_default_timezone_set("Asia/Bangkok");
                                     </div>
                                 </div>
 
-                                <script>
-                                    $(document).ready(function() {
-                                        $('.submit').click(function() {
-                                            // $('#ddd').text($(this).data('id'));
-                                            let id = document.getElementById("ddd").value = $(this).data(
-                                                'id');
-                                            console.log('kk');
-                                        });
-                                    })
-                                </script>
+
                             </form>
                             <?php
                             $date = date("Y-m-d H:i:s");
