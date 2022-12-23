@@ -67,7 +67,7 @@ date_default_timezone_set("Asia/Bangkok");
 
     html,
     body {
-        background-image: url("img/it.jpeg");
+        background-image: url("img/bg.jpg");
 
         background-repeat: no-repeat;
         background-position: center center;
