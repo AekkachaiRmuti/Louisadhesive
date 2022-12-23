@@ -481,8 +481,8 @@ date_default_timezone_set("Asia/Bangkok");
                                         // });
                                     </script>
                                     <br>
-                                    <div class="col-lg-6 col-md-8 col-sm-8">
-                                        <Textarea name="txtar" class="txtarea" placeholder="--รายละเอียด--"></Textarea>
+                                    <div class="col-lg-6 col-md-8 col-sm-8">giy
+                                        <Textarea name="txtar" class="txtarea form-control" placeholder="--Detail--"></Textarea>
                                     </div>
                                     <br>
                                     <button name="next" type="submit" class="btn btn-warning btns">SEND</button>
